@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>browse_hover.png</file>
+        <file>browse.png</file>
+        <file>pause_hover.png</file>
+        <file>pause.png</file>
+        <file>Pitch_menu_hover.png</file>
+        <file>Pitch_menu.png</file>
+        <file>play_hover.png</file>
+        <file>play.png</file>
+        <file>record_hover.png</file>
+        <file>record.png</file>
+        <file>start_button_hover.png</file>
+        <file>start_button.png</file>
+        <file>stop_hover.png</file>
+        <file>stop.png</file>
+        <file>Water_level_menu_hover.png</file>
+        <file>Water_level_menu.png</file>
+    </qresource>
+</RCC>

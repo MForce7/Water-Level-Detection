@@ -1,4 +1,4 @@
-.important {
+.title {
     font-weight: bold;
-    color: red;
+    color: green;
 }

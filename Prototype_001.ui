@@ -14,17 +14,22 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">QMainWindow#MainWindow {
+	background : #ffffff
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>303</x>
+      <x>140</x>
       <y>9</y>
-      <width>674</width>
-      <height>95</height>
+      <width>1000</width>
+      <height>115</height>
      </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
     </property>
     <property name="frameShape">
      <enum>QFrame::NoFrame</enum>
@@ -32,27 +37,67 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>654</width>
-       <height>75</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Inter</family>
-       <pointsize>46</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Water Level Detection</string>
-     </property>
-    </widget>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <family>Inter</family>
+         <pointsize>46</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="mouseTracking">
+        <bool>true</bool>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
+       <property name="text">
+        <string>Water Level Detection</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::AutoText</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
    </widget>
    <widget class="QFrame" name="frame_2">
     <property name="geometry">
@@ -117,8 +162,14 @@
              <property name="maximumSize">
               <size>
                <width>406</width>
-               <height>86</height>
+               <height>100</height>
               </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QFrame#frame_6 {
+	background: #38BDF8;
+	border-radius: 15px;
+}</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -144,7 +195,7 @@
                <widget class="QFrame" name="frame_8">
                 <property name="maximumSize">
                  <size>
-                  <width>406</width>
+                  <width>1000</width>
                   <height>16777215</height>
                  </size>
                 </property>
@@ -162,8 +213,8 @@
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>30</width>
-                     <height>30</height>
+                     <width>1000</width>
+                     <height>1000</height>
                     </size>
                    </property>
                    <property name="font">
@@ -171,8 +222,19 @@
                      <pointsize>9</pointsize>
                     </font>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton#pushButton_3{
+	background : url(:/images/record.png);
+	border-radius: 5px;
+	width : 30px;
+	height : 30px;
+}
+QPushButton#pushButton_3:hover {
+	background : url(:/images/record_hover.png)
+}</string>
+                   </property>
                    <property name="text">
-                    <string>rec</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -192,8 +254,19 @@
                      <pointsize>9</pointsize>
                     </font>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton#pushButton_5{
+	background :url(:/images/play.png);
+	border-radius: 5px;
+	width : 98px;
+	height : 98px;
+}
+QPushButton#pushButton_5:hover {
+	background : url(:/images/play_hover.png)
+}</string>
+                   </property>
                    <property name="text">
-                    <string>pl</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -213,8 +286,19 @@
                      <pointsize>9</pointsize>
                     </font>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton#pushButton_4{
+	background :url(:/images/stop.png);
+	border-radius: 5px;
+	width : 98px;
+	height : 98px;
+}
+QPushButton#pushButton_4:hover {
+	background :url(:/images/stop_hover.png)
+}</string>
+                   </property>
                    <property name="text">
-                    <string>st</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -234,13 +318,39 @@
                      <pointsize>9</pointsize>
                     </font>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton#pushButton_2{
+	background :url(:/images/browse.png);
+	border-radius: 5px;
+	width : 98px;
+	height : 98px;
+}
+QPushButton#pushButton:hover {
+	background :url(:/images/browse_hover.png)
+}</string>
+                   </property>
                    <property name="text">
-                    <string>op</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QSlider" name="horizontalSlider">
+                   <property name="styleSheet">
+                    <string notr="true">QSlider::groove:horizontal {
+	background : #ffffff;
+	height : 10px;
+
+}
+
+QSlider::handle:horizontal {
+	background : #082F49;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	margin: -7px, -7px;
+}</string>
+                   </property>
                    <property name="orientation">
                     <enum>Qt::Horizontal</enum>
                    </property>
@@ -257,8 +367,14 @@
              <property name="maximumSize">
               <size>
                <width>406</width>
-               <height>86</height>
+               <height>100</height>
               </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QFrame#frame_7 {
+	background: #38BDF8;
+	border-radius: 15px;
+}</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -311,8 +427,19 @@
                      <pointsize>9</pointsize>
                     </font>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton#pushButton_6{
+	background : url(:/images/record.png);
+	border-radius: 5px;
+	width : 30px;
+	height : 30px;
+}
+QPushButton#pushButton_6:hover {
+	background : url(:/images/record_hover.png)
+}</string>
+                   </property>
                    <property name="text">
-                    <string>rec</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -332,8 +459,19 @@
                      <pointsize>9</pointsize>
                     </font>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton#pushButton_7{
+	background :url(:/images/play.png);
+	border-radius: 5px;
+	width : 98px;
+	height : 98px;
+}
+QPushButton#pushButton_7:hover {
+	background : url(:/images/play_hover.png)
+}</string>
+                   </property>
                    <property name="text">
-                    <string>pl</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -353,8 +491,19 @@
                      <pointsize>9</pointsize>
                     </font>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton#pushButton_8{
+	background :url(:/images/stop.png);
+	border-radius: 5px;
+	width : 98px;
+	height : 98px;
+}
+QPushButton#pushButton_8:hover {
+	background :url(:/images/stop_hover.png)
+}</string>
+                   </property>
                    <property name="text">
-                    <string>st</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -374,13 +523,39 @@
                      <pointsize>9</pointsize>
                     </font>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton#pushButton_9{
+	background :url(:/images/browse.png);
+	border-radius: 5px;
+	width : 98px;
+	height : 98px;
+}
+QPushButton#pushButton_9:hover {
+	background :url(:/images/browse_hover.png)
+}</string>
+                   </property>
                    <property name="text">
-                    <string>op</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QSlider" name="horizontalSlider_2">
+                   <property name="styleSheet">
+                    <string notr="true">QSlider::groove:horizontal {
+	background : #ffffff;
+	height : 10px;
+
+}
+
+QSlider::handle:horizontal {
+	background : #082F49;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	margin: -7px, -7px;
+}</string>
+                   </property>
                    <property name="orientation">
                     <enum>Qt::Horizontal</enum>
                    </property>
@@ -400,8 +575,19 @@
                <height>98</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton#pushButton{
+	background :url(:/images/start_button.png);
+	border-radius: 5px;
+	width : 98px;
+	height : 98px;
+}
+QPushButton#pushButton:hover {
+	background :url(:/images/start_button_hover.png)
+}</string>
+             </property>
              <property name="text">
-              <string>Start</string>
+              <string/>
              </property>
             </widget>
            </item>
@@ -520,7 +706,7 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="source.qrc"/>
+  <include location="Assets/button_img.qrc"/>
  </resources>
  <connections/>
 </ui>

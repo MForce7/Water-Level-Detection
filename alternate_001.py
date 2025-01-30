@@ -6,26 +6,23 @@ from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QWidget, QComboBox, QLabel, QVBoxLayout, 
     QHBoxLayout, QPushButton, QStyle, QGridLayout,QSlider, QFrame
 )
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QFile
 
-class MainWindow(QWidget):
+
+class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         
         self.setWindowTitle("Water Level Detection")
         self.setGeometry(100, 100, 1280, 720)
         self.page = 0
-        
-        with open("style.qss", "r") as f:
-            style_sheet = f.read()
-        self.setStyleSheet(style_sheet)
-        
-        
+    
         
         if self.page == 0:
             # Title
             main_title = QLabel("Water Level Detection", self)
-            main_title.setProperty("Heading", self)
+            main_title.setProperty("heading","title")
+            main_title.setStyleSheet("color: red;")
             
             # Player1==============================================
             self.player_title1 = QLabel("Full Container", self)
@@ -159,7 +156,7 @@ class MainWindow(QWidget):
         # Set central widget
         container_widget = QFrame()
         container_widget.setLayout(self.main_container)
-        # self.setCentralWidget(container_widget)
+        self.setCentralWidget(container_widget)
         
         
         
@@ -186,6 +183,16 @@ class MainWindow(QWidget):
         self.toggle_button.setStyleSheet("font-size: 18px;")
         self.toggle_button.move(10, 10)
         self.toggle_button.clicked.connect(self.toggle_menu)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     def toggle_menu(self):
         """
         Fungsi untuk menampilkan/menyembunyikan side menu.
@@ -222,8 +229,12 @@ class MainWindow(QWidget):
         
         
         
-        
-        
+def load_stylesheet(app, stylesheet_path):
+        try:
+            with open(stylesheet_path, "r") as f:
+                app.setStyleSheet(f.read())
+        except FileNotFoundError:
+            print(f"Error: {stylesheet_path} not found.") 
         
         
         
@@ -231,6 +242,7 @@ class MainWindow(QWidget):
         
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    load_stylesheet(app, "style.qss")
     window = MainWindow()
     window.show()
     sys.exit(app.exec())
